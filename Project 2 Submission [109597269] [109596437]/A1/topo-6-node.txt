@@ -1,0 +1,33 @@
+# topo-6-node.txt
+
+#   /------\	                                                /------\
+#   |Consumer1 |<--+                                            +-->|Producer1|
+#   \------/    \                                          /    \------/
+#            	 \                                        /     
+#                 +-->/------\           /------\<-+      
+#                     | NodeA |<==============>|NodeB |         
+#                 +-->\------/                 \------/<-+      
+#                /                                        \
+#   /------\    /                                          \    /------\
+#   |Consumer2 |<--+                                            +-->|Producer2|
+#   \------/                                                    \------/
+
+router
+
+# node  comment   yPos    xPos
+Consumer1   NA        1       3
+Consumer2   NA        3       3
+NodeA    NA        2       5
+NodeB    NA        2       7
+Producer1   NA        1       9
+Producer2   NA        3       9
+
+link
+
+# srcNode   dstNode     bandwidth   metric     delay   queue
+Consumer1       NodeA        10Mbps      1        10ms    20
+Consumer2       NodeA        10Mbps      1        10ms    20
+NodeA           NodeB        10Mbps      1        10ms    20
+Producer1       NodeB        10Mbps      1        10ms    20
+Producer2       NodeB        10Mbps      1        10ms    20
+
